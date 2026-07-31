@@ -2535,3 +2535,69 @@ html[data-theme="light"] .footer-brand > p {
 @media (prefers-reduced-motion: reduce) {
   .hero__art { animation: none !important; transform: translateX(-50%) !important; }
 }
+
+
+/* V14 — hero plus compact, barre jaune et repère de défilement visibles */
+@media (min-width: 768px) {
+  .hero {
+    min-height: calc(100svh - 42px) !important;
+    padding-top: calc(var(--header-h) + .65rem) !important;
+    padding-bottom: 3rem !important;
+    align-items: center !important;
+  }
+
+  .hero__scroll {
+    z-index: 14 !important;
+    display: flex !important;
+    bottom: 2.9rem !important;
+    color: rgba(255,255,255,.48) !important;
+  }
+
+  .capability-strip {
+    z-index: 15 !important;
+    margin-top: -2.65rem !important;
+  }
+}
+
+/* Le repère reste lisible en thème clair. */
+html[data-theme="light"] .hero__scroll {
+  color: rgba(0,0,0,.62) !important;
+}
+
+/* Bouton Retour en haut, visible après défilement. */
+.back-to-top {
+  border-color: var(--yellow) !important;
+  background: var(--yellow) !important;
+  color: #000 !important;
+  box-shadow: 0 14px 36px rgba(0,0,0,.42), 0 0 0 1px rgba(254,255,1,.22) !important;
+}
+.back-to-top.is-visible {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+}
+.back-to-top:hover {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding-top: calc(var(--header-h) + 1.1rem) !important;
+  }
+
+  .hero__scroll {
+    position: relative !important;
+    left: auto !important;
+    bottom: auto !important;
+    z-index: 14 !important;
+    display: flex !important;
+    width: max-content;
+    margin: -.35rem 0 .35rem .15rem !important;
+    color: rgba(255,255,255,.48) !important;
+  }
+
+  .capability-strip {
+    margin-top: -1.1rem !important;
+  }
+}
