@@ -2101,3 +2101,172 @@ html[data-theme="light"] .footer-brand > p {
 }
 
 .engineering-cursor { transform: translateZ(220px) !important; }
+
+/* V12 — placement précis des cartes du hero et robustesse mobile */
+@media (min-width: 768px) {
+  .hero-info--coverage {
+    top: 14% !important;
+    left: 17% !important;
+    right: auto !important;
+    bottom: auto !important;
+  }
+  .hero-info--expertise {
+    top: 36% !important;
+    right: .5% !important;
+    left: auto !important;
+    bottom: auto !important;
+  }
+  .hero-info--local {
+    top: auto !important;
+    right: auto !important;
+    bottom: 20% !important;
+    left: -16% !important;
+  }
+  .engineering-cursor {
+    top: 67% !important;
+    right: 8% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html,
+  body,
+  .site-shell {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .hero__visual {
+    width: 100% !important;
+    height: 570px !important;
+    justify-self: stretch !important;
+  }
+  .hero__scene {
+    inset: 0 !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+  .hero__art {
+    top: 7% !important;
+    right: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 88% !important;
+    object-position: center center !important;
+  }
+  .hero-info {
+    width: auto !important;
+    max-width: calc(100% - 18px) !important;
+    box-sizing: border-box;
+  }
+  .hero-info--coverage {
+    top: 1% !important;
+    left: 0 !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 220px !important;
+  }
+  .hero-info--expertise {
+    top: 38% !important;
+    right: 0 !important;
+    left: auto !important;
+    bottom: auto !important;
+    width: 214px !important;
+  }
+  .hero-info--local {
+    top: auto !important;
+    right: auto !important;
+    bottom: 1% !important;
+    left: 0 !important;
+    width: 220px !important;
+  }
+  .engineering-cursor {
+    top: 65% !important;
+    right: 0 !important;
+    left: auto !important;
+    max-width: calc(100% - 12px) !important;
+    white-space: nowrap;
+  }
+
+  .team,
+  .team__top,
+  .team__top > *,
+  .team__intro,
+  .team__photo {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+  .team {
+    overflow: hidden;
+  }
+  .team__intro h2 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: 0 !important;
+    font-size: clamp(2.55rem, 12.2vw, 3.35rem) !important;
+    line-height: .95 !important;
+    letter-spacing: -.052em !important;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+  .team__intro > p:last-child {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: 0 !important;
+    font-size: .94rem !important;
+    line-height: 1.58 !important;
+    overflow-wrap: anywhere;
+  }
+  .team__photo {
+    height: auto !important;
+    aspect-ratio: 14 / 9;
+    margin-inline: auto;
+  }
+  .team__photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    background: #0a0a0a;
+  }
+  .team__photo-label {
+    right: .8rem !important;
+    left: .8rem !important;
+    bottom: .75rem !important;
+    max-width: calc(100% - 1.6rem);
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero__visual { height: 545px !important; }
+  .hero-info--coverage,
+  .hero-info--local { width: 205px !important; }
+  .hero-info--expertise { width: 198px !important; }
+  .hero-info strong { font-size: .62rem !important; }
+  .hero-info small { font-size: .36rem !important; }
+  .hero-info div > span { font-size: .42rem !important; }
+  .team__intro h2 {
+    font-size: clamp(2.35rem, 11.7vw, 3rem) !important;
+  }
+  .team__intro > p:last-child {
+    font-size: .9rem !important;
+  }
+}
+
+/* V12.1 — micro-positionnement final validé sur le repère desktop */
+@media (min-width: 768px) {
+  .hero-info--coverage { left: 19% !important; }
+  .hero-info--local { left: -12% !important; }
+}
+
+@media (max-width: 767px) {
+  .engineering-cursor { right: 4% !important; }
+}
+
+@media (max-width: 360px) {
+  .engineering-cursor { right: 3% !important; }
+}
