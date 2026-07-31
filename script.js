@@ -371,6 +371,38 @@
     window.addEventListener("scroll", updateParallax, { passive: true });
     updateParallax();
   }
+
+  const capabilityTrack = document.querySelector(".capability-strip__track");
+  if (capabilityTrack && capabilityTrack.dataset.loopReady !== "true") {
+    const originalItems = [...capabilityTrack.children];
+    const signature = (node) => `${node.tagName}:${node.textContent.trim()}`;
+    const firstSignature = originalItems[0] ? signature(originalItems[0]) : "";
+    let repeatIndex = -1;
+
+    for (let index = 1; index < originalItems.length; index += 1) {
+      if (signature(originalItems[index]) === firstSignature) {
+        repeatIndex = index;
+        break;
+      }
+    }
+
+    const cycleItems = (repeatIndex > 0 ? originalItems.slice(0, repeatIndex) : originalItems)
+      .map((node) => node.cloneNode(true));
+
+    if (cycleItems.length) {
+      const makeSegment = () => {
+        const segment = document.createElement("div");
+        segment.className = "capability-strip__segment";
+        segment.setAttribute("aria-hidden", "true");
+        cycleItems.forEach((node) => segment.appendChild(node.cloneNode(true)));
+        return segment;
+      };
+
+      capabilityTrack.replaceChildren(makeSegment(), makeSegment());
+      capabilityTrack.dataset.loopReady = "true";
+    }
+  }
+
   const backToTop = document.querySelector("[data-back-to-top]");
   if (backToTop) {
     const updateBackToTop = () => {
