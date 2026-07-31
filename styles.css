@@ -1945,3 +1945,159 @@ html[data-theme="light"] .footer-brand > p {
     right: auto !important;
   }
 }
+
+
+/* Positionnement final des cartes flottantes — desktop, Pixel et iPhone */
+.hero-info {
+  min-width: 0;
+}
+.hero-info > div {
+  min-width: 0;
+}
+.hero-info small,
+.hero-info strong,
+.hero-info div > span {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+@media (min-width: 768px) {
+  .hero-info--coverage {
+    top: 33% !important;
+    left: 21% !important;
+    right: auto !important;
+    bottom: auto !important;
+  }
+  .hero-info--expertise {
+    top: 36% !important;
+    right: 2.5% !important;
+    left: auto !important;
+    bottom: auto !important;
+  }
+  .hero-info--local {
+    left: -7% !important;
+    right: auto !important;
+    bottom: .5% !important;
+    top: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-info {
+    gap: .55rem !important;
+    padding: .68rem .72rem !important;
+    border-radius: .82rem !important;
+  }
+  .hero-info small {
+    font-size: .39rem !important;
+    line-height: 1.2 !important;
+    letter-spacing: .09em !important;
+  }
+  .hero-info strong {
+    margin-top: .22rem !important;
+    font-size: .66rem !important;
+    line-height: 1.22 !important;
+  }
+  .hero-info div > span {
+    margin-top: .2rem !important;
+    font-size: .45rem !important;
+    line-height: 1.28 !important;
+  }
+  .hero-info__icon {
+    width: 29px !important;
+    height: 29px !important;
+  }
+  .hero-info__icon svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+  .hero-info__index {
+    font-size: 1.12rem !important;
+  }
+  .hero-info--coverage {
+    top: 2% !important;
+    left: 6.5% !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 220px !important;
+    max-width: calc(100vw - 32px) !important;
+  }
+  .hero-info--expertise {
+    top: 39% !important;
+    right: 6% !important;
+    left: auto !important;
+    bottom: auto !important;
+    width: 210px !important;
+    max-width: calc(100vw - 32px) !important;
+  }
+  .hero-info--local {
+    left: 6.5% !important;
+    right: auto !important;
+    bottom: 4% !important;
+    top: auto !important;
+    width: 220px !important;
+    max-width: calc(100vw - 32px) !important;
+  }
+  .engineering-cursor {
+    top: 66% !important;
+    right: 16% !important;
+    left: auto !important;
+    max-width: calc(100vw - 36px) !important;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-info--coverage,
+  .hero-info--local {
+    width: 210px !important;
+  }
+  .hero-info--expertise {
+    width: 200px !important;
+  }
+  .engineering-cursor {
+    right: 17% !important;
+    font-size: .42rem !important;
+  }
+}
+
+
+/* Micro-ajustements finaux après contrôle visuel */
+@media (min-width: 768px) {
+  .hero-info--local {
+    left: -4% !important;
+    bottom: 5% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .engineering-cursor {
+    top: 66% !important;
+    right: 10% !important;
+    z-index: 9 !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+
+/* Le cartouche jaune reste entièrement visible sur toutes les tailles */
+.engineering-cursor {
+  animation: none !important;
+  transform: none !important;
+  z-index: 12 !important;
+}
+@media (min-width: 768px) {
+  .engineering-cursor {
+    top: 69% !important;
+    right: 8% !important;
+  }
+}
+@media (max-width: 767px) {
+  .engineering-cursor {
+    top: 66% !important;
+    right: 11% !important;
+  }
+}
+
+.engineering-cursor { transform: translateZ(220px) !important; }
