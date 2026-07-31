@@ -2653,3 +2653,125 @@ html[data-theme="light"] .hero__scroll {
 @media (prefers-reduced-motion: reduce) {
   .capability-strip__track { animation-duration: 80s !important; }
 }
+
+/* V16 — ajustements mobiles finaux : composant île + présentation sans découpe */
+@media (max-width: 767px) {
+  /* Les cartes haute et basse restent au contact visuel de l'île. */
+  .hero-info--coverage {
+    top: 60px !important;
+    left: 4px !important;
+    right: auto !important;
+    bottom: auto !important;
+  }
+  .hero-info--local {
+    top: auto !important;
+    right: auto !important;
+    bottom: 64px !important;
+    left: 4px !important;
+  }
+
+  /* Section entreprise : une seule colonne, largeur sûre et aucun texte coupé. */
+  .about {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 2.25rem !important;
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+  .about__visual,
+  .about__content,
+  .about__image,
+  .values-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .about__visual {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 4 / 5 !important;
+    overflow: hidden !important;
+  }
+  .about__image {
+    position: absolute !important;
+    inset: 0 !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    border-radius: 1.65rem !important;
+  }
+  .about__image img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+  .about__content {
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+  .about__content h2 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: 0 !important;
+    font-size: clamp(2.2rem, 10.5vw, 2.9rem) !important;
+    line-height: .98 !important;
+    letter-spacing: -.045em !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+    hyphens: auto !important;
+  }
+  .about__content > p:not(.eyebrow) {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: 0 !important;
+    font-size: .92rem !important;
+    line-height: 1.58 !important;
+    overflow-wrap: anywhere !important;
+  }
+  .values-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    margin-top: 2rem !important;
+    overflow: hidden !important;
+    border-radius: 1.5rem !important;
+  }
+  .values-grid article {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 118px !important;
+    padding: 1.25rem 1.3rem !important;
+    box-sizing: border-box !important;
+  }
+  .values-grid strong,
+  .values-grid small {
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-info--coverage { top: 54px !important; }
+  .hero-info--local { bottom: 58px !important; }
+  .about__content h2 {
+    font-size: clamp(2.1rem, 10.2vw, 2.65rem) !important;
+  }
+  .about__content > p:not(.eyebrow) {
+    font-size: .89rem !important;
+  }
+}
+
+/* V16.1 — rapprochement final des cartes flottantes de l'île */
+@media (max-width: 767px) {
+  .hero-info--coverage { top: 68px !important; }
+  .hero-info--local { bottom: 88px !important; }
+}
+@media (max-width: 380px) {
+  .hero-info--coverage { top: 60px !important; }
+  .hero-info--local { bottom: 80px !important; }
+}
