@@ -1882,3 +1882,66 @@ html[data-theme="light"] .footer-brand > p {
     padding-left: .78rem;
   }
 }
+
+
+/* Ajustement strict des cartes flottantes du hero selon repères utilisateur */
+.hero__scene { overflow: visible; }
+.hero-info {
+  max-width: none !important;
+  width: max-content !important;
+}
+.hero-info--coverage {
+  top: 9% !important;
+  left: 14% !important;
+  right: auto !important;
+  bottom: auto !important;
+}
+.hero-info--expertise {
+  top: 36% !important;
+  right: 2.5% !important;
+  left: auto !important;
+  bottom: auto !important;
+}
+.hero-info--local {
+  left: 2% !important;
+  right: auto !important;
+  bottom: 7% !important;
+  top: auto !important;
+}
+.hero-info--local small,
+.hero-info--local > div > small,
+.hero-info--local > div::before { display: none !important; content: none !important; }
+
+@media (max-width: 1024px) {
+  .hero-info--coverage {
+    top: 9% !important;
+    left: 11% !important;
+    right: auto !important;
+  }
+  .hero-info--expertise {
+    top: 36% !important;
+    right: 0 !important;
+  }
+  .hero-info--local {
+    left: 1% !important;
+    bottom: 6% !important;
+    right: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-info--coverage {
+    top: 4% !important;
+    left: 4% !important;
+    right: auto !important;
+  }
+  .hero-info--expertise {
+    top: 39% !important;
+    right: 1% !important;
+  }
+  .hero-info--local {
+    left: 2% !important;
+    bottom: 6% !important;
+    right: auto !important;
+  }
+}
