@@ -1498,3 +1498,73 @@ html[data-theme="light"] .related-card > span { color: rgba(0,0,0,.5); }
 .direct-actions { display: none !important; }
 
 html[data-theme="light"] .stats__kicker { display:none; }
+
+/* Ajustements ciblés du hero — version demandée */
+.hero__art {
+  top: -3.5%;
+  animation: hero-island-parallax-visible 7s ease-in-out infinite;
+}
+
+.hero-info--coverage {
+  top: 1.5%;
+  right: 5%;
+  left: auto;
+}
+
+.hero-info--expertise {
+  top: 37%;
+  right: -5%;
+}
+
+.hero-info--local {
+  right: 8%;
+  bottom: 5.5%;
+  left: auto;
+}
+
+.hero-info--local > i {
+  display: none;
+}
+
+@keyframes hero-island-parallax-visible {
+  0%, 100% {
+    transform: translate3d(-26px, var(--hero-scroll-y), 28px) rotateY(-6deg) rotateX(1deg) rotateZ(-.35deg) scale(1.08);
+  }
+  50% {
+    transform: translate3d(26px, calc(var(--hero-scroll-y) - 5px), 42px) rotateY(6deg) rotateX(-1deg) rotateZ(.35deg) scale(1.08);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero__art { top: -2%; }
+  .hero-info--coverage { right: 3%; left: auto; }
+  .hero-info--expertise { right: -2%; }
+  .hero-info--local { right: 6%; left: auto; bottom: 6%; }
+}
+
+@media (max-width: 767px) {
+  .hero__art { top: 0; animation-duration: 8.5s; }
+  .hero-info--coverage { right: 2%; left: auto; }
+  .hero-info--expertise { right: -1%; }
+  .hero-info--local { right: 3%; left: auto; bottom: 7%; }
+}
+
+/* Intensification de l'effet 3D en boucle, sans agrandir l'image */
+.hero-info--local { bottom: 10%; }
+
+@keyframes hero-island-parallax-visible {
+  0%, 100% {
+    transform: translate3d(-40px, var(--hero-scroll-y), 28px) rotateY(-8deg) rotateX(1.4deg) rotateZ(-.45deg) scale(1.08);
+  }
+  50% {
+    transform: translate3d(40px, calc(var(--hero-scroll-y) - 7px), 46px) rotateY(8deg) rotateX(-1.4deg) rotateZ(.45deg) scale(1.08);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-info--local { bottom: 9%; }
+}
+
+@media (max-width: 767px) {
+  .hero-info--local { bottom: 9%; }
+}
