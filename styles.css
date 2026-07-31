@@ -1568,3 +1568,135 @@ html[data-theme="light"] .stats__kicker { display:none; }
 @media (max-width: 767px) {
   .hero-info--local { bottom: 9%; }
 }
+
+/* Ajustements demandés — hero et méthode */
+.hero__art {
+  top: -3.5%;
+}
+
+@keyframes hero-island-parallax-visible {
+  0%, 100% {
+    transform: translate3d(-40px, calc(var(--hero-scroll-y) - 68px), 28px) rotateY(-8deg) rotateX(1.4deg) rotateZ(-.45deg) scale(1.08);
+  }
+  50% {
+    transform: translate3d(40px, calc(var(--hero-scroll-y) - 75px), 46px) rotateY(8deg) rotateX(-1.4deg) rotateZ(.45deg) scale(1.08);
+  }
+}
+
+.method-steps li {
+  min-height: 245px;
+  padding-bottom: 1.45rem;
+}
+
+html[data-theme="light"] .method {
+  background: #070707;
+  color: #fff;
+}
+html[data-theme="light"] .method__intro > p:last-child {
+  color: rgba(255,255,255,.58);
+}
+html[data-theme="light"] .method__intro .eyebrow,
+html[data-theme="light"] .method-steps small {
+  color: rgba(255,255,255,.45);
+}
+html[data-theme="light"] .method-steps {
+  border-top-color: rgba(255,255,255,.14);
+}
+html[data-theme="light"] .method-steps li {
+  border-right-color: rgba(255,255,255,.12);
+  border-bottom-color: rgba(255,255,255,.12);
+}
+html[data-theme="light"] .method-steps li:hover {
+  background: rgba(255,255,255,.055);
+}
+html[data-theme="light"] .method-steps__number,
+html[data-theme="light"] .method-steps li:last-child .method-steps__number {
+  border-color: rgba(255,255,255,.28);
+  color: #fff;
+}
+html[data-theme="light"] .method-steps p {
+  color: rgba(255,255,255,.58);
+}
+html[data-theme="light"] .method__intro h2,
+html[data-theme="light"] .method-steps h3 {
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  @keyframes hero-island-parallax-visible {
+    0%, 100% {
+      transform: translate3d(-30px, calc(var(--hero-scroll-y) - 48px), 26px) rotateY(-7deg) rotateX(1deg) rotateZ(-.35deg) scale(1.08);
+    }
+    50% {
+      transform: translate3d(30px, calc(var(--hero-scroll-y) - 54px), 40px) rotateY(7deg) rotateX(-1deg) rotateZ(.35deg) scale(1.08);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .method-steps li,
+  .method-steps li:nth-child(3n) {
+    min-height: 205px;
+    padding-bottom: 1.2rem;
+  }
+  @keyframes hero-island-parallax-visible {
+    0%, 100% {
+      transform: translate3d(-20px, calc(var(--hero-scroll-y) - 24px), 22px) rotateY(-5deg) rotateX(.8deg) rotateZ(-.25deg) scale(1.08);
+    }
+    50% {
+      transform: translate3d(20px, calc(var(--hero-scroll-y) - 29px), 34px) rotateY(5deg) rotateX(-.8deg) rotateZ(.25deg) scale(1.08);
+    }
+  }
+}
+
+/* Derniers ajustements de position et de densité */
+@keyframes hero-island-parallax-visible {
+  0%, 100% {
+    transform: translate3d(-40px, calc(var(--hero-scroll-y) - 135px), 28px) rotateY(-8deg) rotateX(1.4deg) rotateZ(-.45deg) scale(1.08);
+  }
+  50% {
+    transform: translate3d(40px, calc(var(--hero-scroll-y) - 142px), 46px) rotateY(8deg) rotateX(-1.4deg) rotateZ(.45deg) scale(1.08);
+  }
+}
+
+.method-steps li {
+  min-height: 220px;
+  padding-top: 1.75rem;
+  padding-bottom: 1rem;
+}
+html[data-theme="light"] .method__intro h2 em {
+  color: var(--red);
+}
+
+@media (max-width: 1024px) {
+  @keyframes hero-island-parallax-visible {
+    0%, 100% {
+      transform: translate3d(-30px, calc(var(--hero-scroll-y) - 92px), 26px) rotateY(-7deg) rotateX(1deg) rotateZ(-.35deg) scale(1.08);
+    }
+    50% {
+      transform: translate3d(30px, calc(var(--hero-scroll-y) - 98px), 40px) rotateY(7deg) rotateX(-1deg) rotateZ(.35deg) scale(1.08);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .method-steps li,
+  .method-steps li:nth-child(3n) {
+    min-height: 190px;
+    padding-top: 1.35rem;
+    padding-bottom: .85rem;
+  }
+  @keyframes hero-island-parallax-visible {
+    0%, 100% {
+      transform: translate3d(-20px, calc(var(--hero-scroll-y) - 42px), 22px) rotateY(-5deg) rotateX(.8deg) rotateZ(-.25deg) scale(1.08);
+    }
+    50% {
+      transform: translate3d(20px, calc(var(--hero-scroll-y) - 47px), 34px) rotateY(5deg) rotateX(-.8deg) rotateZ(.25deg) scale(1.08);
+    }
+  }
+}
+
+/* Position finale de l'île sur le hero */
+.hero__art { top: -14%; }
+@media (max-width: 1024px) { .hero__art { top: -8%; } }
+@media (max-width: 767px) { .hero__art { top: -4%; } }
