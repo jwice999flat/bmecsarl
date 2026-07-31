@@ -1856,3 +1856,29 @@ html[data-theme="light"] .footer-brand > p {
 .engineering-cursor { right: 12%; }
 @media (max-width: 1024px) { .engineering-cursor { right: 10%; } }
 @media (max-width: 767px) { .engineering-cursor { right: 6%; } }
+
+
+/* Ajustement final des cartes flottantes du hero */
+.hero-info {
+  width: auto !important;
+  max-width: min(360px, 62%) !important;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.hero-info--coverage { width: auto !important; }
+.hero-info--expertise { width: auto !important; }
+.hero-info--local { width: auto !important; }
+.hero-info--local small { display: none !important; }
+
+@media (max-width: 1024px) {
+  .hero-info { max-width: min(320px, 68%) !important; }
+}
+
+@media (max-width: 767px) {
+  .hero-info {
+    width: auto !important;
+    max-width: min(260px, 76%) !important;
+    padding-right: .78rem;
+    padding-left: .78rem;
+  }
+}
