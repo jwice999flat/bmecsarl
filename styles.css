@@ -2270,3 +2270,268 @@ html[data-theme="light"] .footer-brand > p {
 @media (max-width: 360px) {
   .engineering-cursor { right: 3% !important; }
 }
+
+
+/* V13 — hero mobile unifié, alignements et bouton retour en haut */
+.back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 145;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid rgba(254,255,1,.38);
+  border-radius: 50%;
+  background: rgba(10,10,10,.88);
+  color: var(--yellow);
+  box-shadow: 0 16px 36px rgba(0,0,0,.35);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(14px);
+  backdrop-filter: blur(16px);
+  transition: opacity .3s var(--ease), transform .3s var(--ease), background .25s var(--ease);
+}
+.back-to-top.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.back-to-top:hover { background: var(--yellow); color: #000; }
+.back-to-top svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; transform: rotate(-90deg); }
+
+/* Desktop : placement des trois cartes au contact visuel de l'île */
+@media (min-width: 768px) {
+  .hero-info--coverage {
+    top: 12% !important;
+    left: 5% !important;
+    right: auto !important;
+  }
+  .hero-info--expertise {
+    top: 39% !important;
+    right: 1% !important;
+    left: auto !important;
+  }
+  .hero-info--local {
+    left: -8% !important;
+    right: auto !important;
+    bottom: 7% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html, body, .site-shell, main, section {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: clip;
+  }
+
+  .hero {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+  .hero__content,
+  .hero__content > *,
+  .team__intro,
+  .team__intro > *,
+  .section-heading,
+  .section-heading > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(3.05rem, 15.2vw, 4.8rem) !important;
+    line-height: .91 !important;
+    overflow-wrap: break-word;
+  }
+  .hero__lead {
+    max-width: 100%;
+    font-size: .94rem !important;
+    line-height: 1.55 !important;
+  }
+
+  /* L'île et ses cartes forment un seul composant de hauteur stable */
+  .hero__visual {
+    position: relative !important;
+    width: 100% !important;
+    height: 520px !important;
+    margin: 0 auto !important;
+    overflow: visible !important;
+  }
+  .hero__scene {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: visible !important;
+    transform: none !important;
+  }
+  .hero__art {
+    top: 72px !important;
+    left: 50% !important;
+    right: auto !important;
+    width: min(108%, 470px) !important;
+    height: 360px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    animation: hero-mobile-component-loop 8s ease-in-out infinite !important;
+    transform-origin: 50% 55% !important;
+  }
+  @keyframes hero-mobile-component-loop {
+    0%,100% { transform: translate3d(calc(-50% - 9px),0,24px) rotateY(-3.2deg) rotateX(.5deg); }
+    50% { transform: translate3d(calc(-50% + 9px),-3px,34px) rotateY(3.2deg) rotateX(-.5deg); }
+  }
+
+  .hero-info {
+    box-sizing: border-box !important;
+    width: auto !important;
+    max-width: calc(100% - 10px) !important;
+    gap: .55rem !important;
+    padding: .68rem .72rem !important;
+    border-radius: .85rem !important;
+    white-space: normal !important;
+  }
+  .hero-info > div { min-width: 0 !important; }
+  .hero-info small {
+    font-size: .38rem !important;
+    line-height: 1.25 !important;
+    letter-spacing: .1em !important;
+    white-space: normal !important;
+  }
+  .hero-info strong {
+    font-size: .68rem !important;
+    line-height: 1.18 !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+  }
+  .hero-info div > span {
+    font-size: .45rem !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+  }
+  .hero-info__icon { width: 29px !important; height: 29px !important; }
+  .hero-info__index { font-size: 1.15rem !important; }
+
+  .hero-info--coverage {
+    top: 4px !important;
+    left: 4px !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: min(245px, 76%) !important;
+  }
+  .hero-info--expertise {
+    top: 178px !important;
+    right: 0 !important;
+    left: auto !important;
+    bottom: auto !important;
+    width: min(220px, 68%) !important;
+  }
+  .hero-info--local {
+    left: 4px !important;
+    right: auto !important;
+    bottom: 3px !important;
+    top: auto !important;
+    width: min(230px, 72%) !important;
+  }
+  .engineering-cursor {
+    top: 328px !important;
+    right: 8px !important;
+    left: auto !important;
+    max-width: calc(100% - 16px) !important;
+    padding: .48rem .65rem !important;
+    font-size: .4rem !important;
+    letter-spacing: .08em !important;
+    white-space: nowrap !important;
+    transform: translateZ(120px) !important;
+  }
+
+  /* Alignement uniforme des cartes et protection contre les textes coupés */
+  .services-grid--bento,
+  .projects-grid,
+  .why-grid,
+  .stats__grid,
+  .home-blog__grid,
+  .contact__layout,
+  .footer-grid {
+    width: 100%;
+    max-width: 100%;
+  }
+  .service-card,
+  .project-card,
+  .why-grid article,
+  .stat-card,
+  .contact-form,
+  .contact-details {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .service-card h3,
+  .project-card h3,
+  .why-grid h3,
+  .contact__heading h2,
+  .team__intro h2,
+  .team-statement p {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+  }
+  .team {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+    overflow: visible !important;
+  }
+  .team__intro h2 {
+    font-size: clamp(2.3rem, 10.8vw, 3.1rem) !important;
+    line-height: .98 !important;
+    letter-spacing: -.045em !important;
+  }
+  .team__intro > p:last-child {
+    font-size: .92rem !important;
+    line-height: 1.58 !important;
+  }
+  .team__photo {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    overflow: hidden !important;
+  }
+  .team__photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 35% !important;
+  }
+  .team__photo-label {
+    right: .75rem !important;
+    left: .75rem !important;
+    max-width: calc(100% - 1.5rem) !important;
+    font-size: .43rem !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+  }
+
+  .back-to-top {
+    right: .9rem;
+    bottom: 5.35rem;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero__visual { height: 500px !important; }
+  .hero__art { top: 70px !important; height: 340px !important; }
+  .hero-info--coverage { width: min(228px, 78%) !important; }
+  .hero-info--expertise { top: 168px !important; width: min(205px, 70%) !important; }
+  .hero-info--local { width: min(218px, 74%) !important; }
+  .engineering-cursor { top: 312px !important; font-size: .37rem !important; }
+  .team__intro h2 { font-size: clamp(2.15rem, 10.4vw, 2.8rem) !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__art { animation: none !important; transform: translateX(-50%) !important; }
+}

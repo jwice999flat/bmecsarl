@@ -371,4 +371,16 @@
     window.addEventListener("scroll", updateParallax, { passive: true });
     updateParallax();
   }
+  const backToTop = document.querySelector("[data-back-to-top]");
+  if (backToTop) {
+    const updateBackToTop = () => {
+      backToTop.classList.toggle("is-visible", window.scrollY > Math.min(520, window.innerHeight * 0.65));
+    };
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
+    });
+    window.addEventListener("scroll", updateBackToTop, { passive: true });
+    updateBackToTop();
+  }
+
 })();
