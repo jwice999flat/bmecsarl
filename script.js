@@ -40,7 +40,7 @@
     });
   });
 
-  document.querySelectorAll("[data-year]").forEach((node) => {
+  document.querySelectorAll(".footer-bottom [data-year]").forEach((node) => {
     node.textContent = String(new Date().getFullYear());
   });
 
@@ -214,23 +214,35 @@
 
   const filterButtons = [...document.querySelectorAll("[data-filter]")];
   const projectCards = [...document.querySelectorAll("[data-category]")];
+  const yearFilter = document.querySelector("[data-year-filter]");
+  const realisationsGrid = document.querySelector(".realisations-grid");
+
+  const activeProjectFilter = () => filterButtons.find((button) => button.classList.contains("is-active"))?.dataset.filter || "all";
+
+  const applyProjectFilters = () => {
+    const category = activeProjectFilter();
+    const year = yearFilter?.value || "all";
+
+    projectCards.forEach((card) => {
+      const categories = (card.dataset.category || "").split(" ");
+      const matchesCategory = category === "all" || categories.includes(category);
+      const matchesYear = year === "all" || card.dataset.year === year;
+      card.classList.toggle("is-hidden", !(matchesCategory && matchesYear));
+    });
+  };
 
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      const filter = button.dataset.filter;
       filterButtons.forEach((item) => {
         const selected = item === button;
         item.classList.toggle("is-active", selected);
         item.setAttribute("aria-pressed", String(selected));
       });
-
-      projectCards.forEach((card) => {
-        const categories = (card.dataset.category || "").split(" ");
-        const shouldShow = filter === "all" || categories.includes(filter);
-        card.classList.toggle("is-hidden", !shouldShow);
-      });
+      applyProjectFilters();
     });
   });
+
+  yearFilter?.addEventListener("change", applyProjectFilters);
 
   const blogFilterButtons = [...document.querySelectorAll("[data-blog-filter]")];
   const blogCards = [...document.querySelectorAll("[data-blog-card]")];

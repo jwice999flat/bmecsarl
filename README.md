@@ -33,3 +33,11 @@ Puis ouvrez `http://localhost:8080`.
 ## Important — données de développement
 
 Les coordonnées, dates historiques, chiffres, projets, clients, témoignages et informations légales actuellement affichés sont fictifs. Ils servent uniquement à valider le design et devront être remplacés par les informations officielles de B-MEC SARL avant la mise en ligne publique.
+
+
+## Réalisations officielles
+
+- `realisations.html` présente toutes les réalisations extraites du document officiel.
+- Le dossier `realisations/` contient une page HTML par projet.
+- Les montants et références de contacts clients ne sont pas publiés.
+- Les images Unsplash sont provisoires et doivent être remplacées par les photographies réelles.
